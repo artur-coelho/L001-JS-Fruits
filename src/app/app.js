@@ -2,7 +2,15 @@ import { market } from "../db/dbFruits.js";
 
 export const body = () => {
   const appElement = newElement("div", "container");
-  appElement.appendChild(createCard(market[0]));
+  const itemsGrid = newElement("div", "items-grid");
+  appElement.appendChild(itemsGrid);
+  itemsGrid.appendChild(createCard(market[0]));
+  itemsGrid.appendChild(createCard(market[1]));
+  itemsGrid.appendChild(createCard(market[2]));
+  itemsGrid.appendChild(createCard(market[3]));
+  itemsGrid.appendChild(createCard(market[4]));
+  itemsGrid.appendChild(createCard(market[5]));
+  appElement.appendChild(newElement("div", "container-list"));
 
   return appElement;
 };
