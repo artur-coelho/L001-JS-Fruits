@@ -4,20 +4,33 @@ export const body = () => {
   const appElement = newElement("div", "container");
   const itemsGrid = newElement("div", "items-grid");
   appElement.appendChild(itemsGrid);
-  itemsGrid.appendChild(createCard(market[0]));
-  itemsGrid.appendChild(createCard(market[1]));
-  itemsGrid.appendChild(createCard(market[2]));
-  itemsGrid.appendChild(createCard(market[3]));
-  itemsGrid.appendChild(createCard(market[4]));
-  itemsGrid.appendChild(createCard(market[5]));
-  appElement.appendChild(newElement("div", "container-list"));
+
+  market.forEach((item) => {
+    itemsGrid.appendChild(createCard(item));
+  });
+
+  const containerList = newElement("div", "container-list");
+  appElement.appendChild(containerList);
+  const headerItem = newElement("div", "header-item");
+  containerList.appendChild(headerItem);
+  headerItem.appendChild(newElement("p", null, "Name"));
+  headerItem.appendChild(newElement("p", null, "Quantity"));
+  headerItem.appendChild(newElement("p", null, "Price $"));
+  headerItem.appendChild(newElement("p", null, "Total"));
 
   return appElement;
 };
-
+/**
+ * @description cria um elemento html
+ * @param {String} tag
+ * @param {String} className
+ * @param {String} value
+ * @returns elemento html
+ */
 export function newElement(tag, className = null, value = null) {
   const element = document.createElement(tag);
-  element.classList.add(className);
+
+  className && element.classList.add(className);
   element.innerText = value;
   return element;
 }

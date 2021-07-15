@@ -1,23 +1,25 @@
 #app {
-  width: 1280px;
+  width: 1050px;
   margin: 0 auto;
 }
 
-.header {
+.header > * {
   font-family: "Nunito Sans", sans-serif;
-  font-size: 36px;
+  font-size: 24px;
   color: #44456f;
   margin-top: 80px;
+  line-height: 33px;
 }
 
 .items-grid {
   display: grid;
   grid-template: repeat(2, auto) / repeat(3, auto);
-  gap: 44px 35px;
+  gap: 44px 30px;
+  margin-top: 40px;
 }
 
 .card {
-  width: 397px;
+  width: 318px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: flex-start;
@@ -33,6 +35,8 @@
 }
 
 .card .image {
+  height: 145px;
+  max-width: 159px;
   background: linear-gradient(
     180deg,
     #b8b8b8 0%,
@@ -42,7 +46,8 @@
 }
 
 .card .content {
-  padding: 24px;
+  max-height: 145px;
+  padding: 20px;
   background-color: #ececec;
   display: grid;
   justify-content: right;
@@ -69,4 +74,10 @@
 .container-list {
   margin-top: 40px;
   background-color: #ececec;
+}
+
+.header-item p {
+  font-size: 20px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #2c2e5e;
 }
